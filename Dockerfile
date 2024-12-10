@@ -6,7 +6,7 @@ RUN mvn -f /home/app/Projeto-agenda---Back/pom.xml clean package
 
 
 FROM openjdk:17-slim
-COPY --from=build /home/app/Projeto-agenda---Back/target/*.jar /usr/local/lib/Agenda.jar
+COPY --from=build /home/app/Projeto-agenda---Back/target/*.jar /usr/local/lib/Projeto-agenda---Back.jar
 VOLUME /tmp
 EXPOSE 8080:8080
-ENTRYPOINT ["java", "-jar", "/usr/local/lib/Agenda.jar"]
+ENTRYPOINT ["java", "-jar", "/usr/local/lib/Projeto-agenda---Back.jar"]
